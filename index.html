@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>还TM看，有病是吧？若有希望登载者，请找兔子报名，报名费1元</title>
+    <title>八班会员墙</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #1e90ff; /* 标准蓝色背景 */
             margin: 0;
-            background-color: #f0f0f0; /* 背景颜色 */
-            font-family: Arial, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
         }
-        .center-text {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
+ 
+        .title {
+            font-size: 3.5rem; /* 大号字体 */
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影提升可读性 */
+            margin-bottom: 40px;
+        }
+ 
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自适应网格布局 */
+            gap: 30px; /* 格子间距 */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+ 
+        .member-block {
+            background: rgba(255, 255, 255, 0.15); /* 半透明背景 */
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px); /* 毛玻璃效果 */
+            transition: transform 0.3s ease; /* 悬停动画 */
+        }
+ 
+        .member-block:hover {
+            transform: translateY(-5px);
+        }
+ 
+        .number {
+            font-size: 1.8rem;
+            color: #ffd700; /* 金色序号 */
+            margin-bottom: 15px;
+        }
+ 
+        .placeholder {
+            font-size: 1.2rem;
+            color: white;
+            min-height: 60px; /* 保证留白空间 */
         }
     </style>
 </head>
 <body>
-    <div class="center-text">还TM看，有病是吧？若有希望登载者，请找兔子报名，报名费1元</div>
+    <h1 class="title">八班会员墙</h1>
+    
+    <div class="grid-container" id="memberWall"></div>
+ 
+    <script>
+        // 动态生成会员区块 
+        const memberWall = document.getElementById('memberWall');
+        
+        for (let i = 1; i <= 20; i++) {
+            const block = document.createElement('div');
+            block.className = 'member-block';
+            block.innerHTML = `
+                <div class="number">${i.toString().padStart(2, '0')}</div>
+                <div class="placeholder">这是字符</div>
+            `;
+            memberWall.appendChild(block);
+        }
+    </script>
 </body>
 </html>
