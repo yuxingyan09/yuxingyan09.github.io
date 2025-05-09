@@ -3,137 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>所谓金句</title>
+    <title>所谓金句｜2025.05.09</title>
     <style>
         :root {
-            --gold-gradient: linear-gradient(135deg, 
-                #ffd700 0%,
-                #f4c542 25%,
-                #daa520 50%,
-                #b8860b 75%,
-                #8b4513 100%);
-            --blue-gradient: linear-gradient(135deg,
-                #4169E1 0%,
-                #6495ED 50%,
-                #87CEEB 100%);
+            --title-black: #1a1a1a;
+            --main-blue: linear-gradient(160deg, #1e3c72 0%, #2a5298 100%);
+            --section-white: rgba(255,255,255,0.95);
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
  
         body {
             margin: 0;
-            font-family: '华文楷体', 'KaiTi', serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family: '霞鹜文楷', 'LXGW WenKai', sans-serif;
+            line-height: 1.8;
         }
  
-        /* 标题区域 */
+        /* 标题区 */
         .header {
-            background: var(--gold-gradient);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: var(--title-black);
+            padding: 4rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, 
+                var(--title-black) 0%,
+                rgba(26,26,26,0.8) 50%,
+                rgba(30,60,114,0.6) 100%);
         }
  
         h1 {
+            color: #fff3db;
             font-size: 3.2rem;
-            color: #654321;
-            text-shadow: 2px 2px 4px rgba(255,215,0,0.5);
-            margin: 0.5rem 0;
+            text-align: center;
+            margin: 0 0 1.2rem;
+            letter-spacing: 0.5rem;
         }
  
         .subtitle {
-            font-size: 1.6rem;
-            color: #8B0000;
-            letter-spacing: 0.2rem;
-        }
- 
-        /* 金句网格容器 */
-        .grid-container {
-            flex: 1;
-            background: var(--blue-gradient);
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.2rem;
-            position: relative;
-        }
- 
-        /* 单个金句卡片 */
-        .gold-box {
-            background: var(--gold-gradient);
-            border: 2px solid #8B4513;
-            border-radius: 12px;
-            padding: 1.2rem;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #d4af37;
+            font-size: 1.4rem;
             text-align: center;
+            opacity: 0.9;
         }
  
-        .gold-box:nth-child(odd) {
-            transform: rotate(-1deg);
-        }
-        .gold-box:nth-child(even) {
-            transform: rotate(1deg);
-        }
- 
-        .gold-box:hover {
-            transform: scale(1.05) rotate(0deg);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            z-index: 1;
+        /* 主体内容区 */
+        .main-content {
+            background: var(--main-blue);
+            padding: 3rem 2rem;
         }
  
-        /* 底部星空图 */
-        .footer {
-            height: 400px;
+        /* 金句网格系统 */
+        .grid-system {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        /* 金句卡片 */
+        .sentence-card {
+            background: var(--section-white);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .sentence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+ 
+        /* 星月夜背景 */
+        .starry-night {
+            height: 500px;
             background: 
-                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
-            background-size: cover;
-            background-position: center 30%;
-            margin-top: auto;
+                linear-gradient(180deg, 
+                    rgba(30,60,114,1) 0%,
+                    rgba(30,60,114,0.8) 20%,
+                    rgba(0,0,0,0) 40%),
+                url('https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg') center bottom/cover;
+            position: relative;
         }
  
         @media (max-width: 768px) {
             h1 { font-size: 2.4rem; }
-            .subtitle { font-size: 1.3rem; }
+            .grid-system { gap: 1rem; }
         }
     </style>
 </head>
 <body>
+    <!-- 标题区 -->
     <div class="header">
         <h1>所谓金句</h1>
-        <div class="subtitle">所谓金句，即，付金，展句</div>
+        <p class="subtitle">所谓金句，即，付金，展句</p>
     </div>
  
-    <div class="grid-container">
-        <!-- 完整列出的20个区域 -->
-        <div class="gold-box">这是第一个字符</div>
-        <div class="gold-box">这是第二个字符</div>
-        <div class="gold-box">这是第三个字符</div>
-        <div class="gold-box">这是第四个字符</div>
-        <div class="gold-box">这是第五个字符</div>
-        <div class="gold-box">这是第六个字符</div>
-        <div class="gold-box">这是第七个字符</div>
-        <div class="gold-box">这是第八个字符</div>
-        <div class="gold-box">这是第九个字符</div>
-        <div class="gold-box">这是第十个字符</div>
-        <div class="gold-box">这是第十一个字符</div>
-        <div class="gold-box">这是第十二个字符</div>
-        <div class="gold-box">这是第十三个字符</div>
-        <div class="gold-box">这是第十四个字符</div>
-        <div class="gold-box">这是第十五个字符</div>
-        <div class="gold-box">这是第十六个字符</div>
-        <div class="gold-box">这是第十七个字符</div>
-        <div class="gold-box">这是第十八个字符</div>
-        <div class="gold-box">这是第十九个字符</div>
-        <div class="gold-box">这是第二十个字符</div>
-    </div>
+    <!-- 金句内容区 -->
+    <main class="main-content">
+        <div class="grid-system">
+            <div class="sentence-card">这是第一个字符</div>
+            <div class="sentence-card">这是第二个字符</div>
+            <div class="sentence-card">这是第三个字符</div>
+            <div class="sentence-card">这是第四个字符</div>
+            <div class="sentence-card">这是第五个字符</div>
+            <div class="sentence-card">这是第六个字符</div>
+            <div class="sentence-card">这是第七个字符</div>
+            <div class="sentence-card">这是第八个字符</div>
+            <div class="sentence-card">这是第九个字符</div>
+            <div class="sentence-card">这是第十个字符</div>
+            <div class="sentence-card">这是第十一个字符</div>
+            <div class="sentence-card">这是第十二个字符</div>
+            <div class="sentence-card">这是第十三个字符</div>
+            <div class="sentence-card">这是第十四个字符</div>
+            <div class="sentence-card">这是第十五个字符</div>
+            <div class="sentence-card">这是第十六个字符</div>
+            <div class="sentence-card">这是第十七个字符</div>
+            <div class="sentence-card">这是第十八个字符</div>
+            <div class="sentence-card">这是第十九个字符</div>
+            <div class="sentence-card">这是第二十个字符</div>
+        </div>
+    </main>
  
-    <div class="footer"></div>
+    <!-- 星月夜底图 -->
+    <div class="starry-night"></div>
 </body>
 </html>
