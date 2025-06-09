@@ -1,57 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <style>
-        body { margin: 0; }
-        .header {
-            background: #000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .content {
-            background: #00f;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .section {
-            background: white;
-            width: 150px;
-            height: 100px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>解放了，各位</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", "微软雅黑", sans-serif;
+      background-image: url('https://img0.baidu.com/it/u=1626101059,3659180898&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* 半透明背景遮罩 */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    h1 {
+      color: gold;
+      font-size: 52px;
+      text-align: center;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .box-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .box {
+        font-size: 18px;
+        height: 50px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>高考加油</h1>
-        <p>祝各位高考顺利</p>
+  <div class="container">
+    <h1>解放了，各位</h1>
+    <div class="box-list">
+      <div class="box">这是1</div>
+      <div class="box">这是2</div>
+      <div class="box">这是3</div>
+      <div class="box">这是4</div>
+      <div class="box">这是5</div>
+      <div class="box">这是6</div>
+      <div class="box">这是7</div>
+      <div class="box">这是8</div>
+      <div class="box">这是9</div>
+      <div class="box">这是10</div>
     </div>
-    <div class="content">
-        <div class="section">祝每个打开此网站的人高考700+</div>
-        <div class="section">居哥快去复习</div>
-        <div class="section">邹狗？什么东西？</div>
-        <div class="section">你还想让我写些什么？</div>
-        <div class="section">没了，复习去吧</div>
-        <div class="section">这是第六个字符</div>
-        <div class="section">这是第七个字符</div>
-        <div class="section">这是第八个字符</div>
-        <div class="section">这是第九个字符</div>
-        <div class="section">这是第十个字符</div>
-        <div class="section">这是第十一个字符</div>
-        <div class="section">真没了</div>
-        <div class="section">这是第十三个字符</div>
-        <div class="section">这是第十四个字符</div>
-        <div class="section">这是第十五个字符</div>
-        <div class="section">这是第十六个字符</div>
-        <div class="section">这是第十七个字符</div>
-        <div class="section">这是第十八个字符</div>
-        <div class="section">这是第十九个字符</div>
-        <div class="section">不是，哥们，快去复习啊！！！</div>
-    </div>
+  </div>
 </body>
 </html>
