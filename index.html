@@ -1,109 +1,118 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>解放了，各位</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>这里是标题</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: "Helvetica Neue", "微软雅黑", sans-serif;
-      background-image: url('https://www.sjmhxs.com/wp-content/uploads/2022/05/1654051634-bd51734fcadcb9d-2048x1622.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    /* 半透明背景遮罩 */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(2px);
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-      min-height: 100vh;
-      color: #fff;
+      margin: 0;
+      background-color: skyblue;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
     }
 
     h1 {
-      color: gold;
-      font-size: 52px;
-      text-align: center;
-      margin-bottom: 50px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      padding: 40px 0 20px 0;
+      font-size: 3em;
     }
 
-    .box-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .box {
-      background-color: #ffffff;
-      border-radius: 12px;
-      height: 60px;
+    .image-gallery {
       display: flex;
       justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      color: #333;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px auto 60px auto;
+      max-width: 1200px;
     }
 
-    .box:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    .image-gallery img {
+      width: 250px;
+      height: auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    /* 让图片稍微倾斜 */
+    .image-gallery img:nth-child(1) {
+      transform: rotate(-3deg);
+    }
+
+    .image-gallery img:nth-child(2) {
+      transform: rotate(2deg);
+    }
+
+    .image-gallery img:nth-child(3) {
+      transform: rotate(-2.5deg);
+    }
+
+    .image-gallery img:nth-child(4) {
+      transform: rotate(3deg);
+    }
+
+    .sticky-notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto 60px auto;
+    }
+
+    .note {
+      background-color: #fff8a6;
+      color: #333;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 36px;
+        font-size: 2em;
       }
 
-      .box {
-        font-size: 18px;
-        height: 50px;
+      .image-gallery img {
+        width: 90%;
+        transform: none !important;
+      }
+
+      .note {
+        width: 80px;
+        height: 80px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>解放了，各位</h1>
-    <div class="box-list">
-      <div class="box">居哥能看到吗？</div>
-      <div class="box">各位，爽玩！！！</div>
-      <div class="box">来玩Minecraft</div>
-      <div class="box">要联机的请联系子明</div>
-      <div class="box">通宵！！！</div>
-      <div class="box">没有了</div>
-      <div class="box">真没有了</div>
-      <div class="box">这是8</div>
-      <div class="box">这是9</div>
-      <div class="box">邹狗是什么东西？</div>
-    </div>
+  <h1>这里是标题</h1>
+
+  <div class="image-gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="星月夜">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Vincent_Willem_van_Gogh_128.jpg" alt="向日葵">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg" alt="蒙娜丽莎的微笑">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg" alt="最后的晚餐">
+  </div>
+
+  <div class="sticky-notes">
+    <div class="note">这是1</div>
+    <div class="note">这是2</div>
+    <div class="note">这是3</div>
+    <div class="note">这是4</div>
+    <div class="note">这是5</div>
+    <div class="note">这是6</div>
+    <div class="note">这是7</div>
+    <div class="note">这是8</div>
+    <div class="note">这是9</div>
+    <div class="note">这是10</div>
   </div>
 </body>
 </html>
