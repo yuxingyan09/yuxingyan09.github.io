@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh;
+    padding: auto;
+    background-color: #a0d6d3;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    padding: 40px 0 20px;
+    margin: 0;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.image-gallery img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.image-gallery img:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.image-gallery img:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.image-gallery img:nth-child(3) {
+    transform: rotate(-1.2deg);
+}
+
+.image-gallery img:nth-child(4) {
+    transform: rotate(2deg);
+}
+
+#sticky-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px;
+    /* border: red solid 1px; */
+}
+
+.note {
+    width: 160px;
+    height: 160px;
+    /* border: blue solid 1px; */
+    background-color: #fff9b1;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#main-page {
+
+    /* 设置main-page的宽度，窗口的60% */
+    width: 60%;
+
+    /* 设置main-page的最小宽度，500像素 */
+    min-width: 500px;
+
+    /* 设置main-page的背景颜色，使用白色 */
+    background-color: white;
+
+    /* 设置盒子阴影，
+     * 参数说明：
+     * x偏移，y偏移，模糊半径，颜色
+     */
+    box-shadow: 5px 10px 5px gray;
+
+    /* 把这个盒子设置为flexbox */
+    display: flex;
+
+    /* 这里是圆角，2倍字体大小 */
+    border-radius: 2em;
+}

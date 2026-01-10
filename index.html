@@ -1,125 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>伟大的7425帝国</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #a0d6d3;
-      font-family: 'Arial', sans-serif;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 3em;
-      color: white;
-      padding: 40px 0 20px;
-      margin: 0;
-    }
-
-    .image-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .image-gallery img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .image-gallery img:nth-child(1) { transform: rotate(-2deg); }
-    .image-gallery img:nth-child(2) { transform: rotate(1.5deg); }
-    .image-gallery img:nth-child(3) { transform: rotate(-1.2deg); }
-    .image-gallery img:nth-child(4) { transform: rotate(2deg); }
-
-    .sticky-notes {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      height: 800px;
-      margin: 0 auto 80px;
-      padding: 0;
-    }
-
-    .note {
-      width: 160px;
-      height: 160px;
-      background-color: #fff9b1;
-      color: #333;
-      font-weight: bold;
-      font-size: 1.1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      position: absolute;
-    }
-
-    /* 随机位置和旋转 */
-    .note:nth-child(1) { top: 20px; left: 50px; transform: rotate(-4deg); }
-    .note:nth-child(2) { top: 80px; left: 250px; transform: rotate(3deg); }
-    .note:nth-child(3) { top: 40px; left: 470px; transform: rotate(-2deg); }
-    .note:nth-child(4) { top: 120px; left: 680px; transform: rotate(5deg); }
-    .note:nth-child(5) { top: 30px; left: 880px; transform: rotate(-3deg); }
-    .note:nth-child(6) { top: 300px; left: 100px; transform: rotate(2deg); }
-    .note:nth-child(7) { top: 370px; left: 320px; transform: rotate(-5deg); }
-    .note:nth-child(8) { top: 330px; left: 520px; transform: rotate(4deg); }
-    .note:nth-child(9) { top: 400px; left: 720px; transform: rotate(-2deg); }
-    .note:nth-child(10) { top: 360px; left: 920px; transform: rotate(3deg); }
-
-    @media (max-width: 768px) {
-      .image-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .sticky-notes {
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        position: static;
-        padding: 20px;
-      }
-
-      .note {
-        position: static;
-        transform: rotate(0deg);
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
+
 <body>
   <h1>伟大的7425大帝国</h1>
+  <div id="main-page">
+    <!-- 图片区域 -->
+    <!-- <div class="image-gallery">
+      <img
+        src="https://bkimg.cdn.bcebos.com/pic/4e4a20a4462309f79052b6aa87541bf3d7ca7bcb784a?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
+      <img
+        src="https://bkimg.cdn.bcebos.com/pic/d01373f082025aafcce937a8f7edab64024f1afd?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
+      <img
+        src="https://bkimg.cdn.bcebos.com/pic/95eef01f3a292df53d442166be315c6034a8733a?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
+      <img
+        src="https://bkimg.cdn.bcebos.com/pic/4d086e061d950a7b0208277ba69875d9f2d3572c6370?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
+    </div> -->
 
-  <!-- 图片区域 -->
-  <div class="image-gallery">
-    <img src="https://bkimg.cdn.bcebos.com/pic/4e4a20a4462309f79052b6aa87541bf3d7ca7bcb784a?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
-    <img src="https://bkimg.cdn.bcebos.com/pic/d01373f082025aafcce937a8f7edab64024f1afd?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
-    <img src="https://bkimg.cdn.bcebos.com/pic/95eef01f3a292df53d442166be315c6034a8733a?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
-    <img src="https://bkimg.cdn.bcebos.com/pic/4d086e061d950a7b0208277ba69875d9f2d3572c6370?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536">
+    <!-- 便利贴区域 -->
+    <div id="sticky-notes">
+    </div>
   </div>
 
-  <!-- 便利贴区域 -->
-  <div class="sticky-notes">
-    <div class="note">我暂时不知道写什么</div>
-    <div class="note">日后大概会知道吧</div>
-    <div class="note">此网站暂时贡献给伟大的7425大帝国</div>
-    <div class="note">写点什么好呢</div>
-    <div class="note">完全没思路</div>
-    <div class="note">算了</div>
-    <div class="note">没必要写了</div>
-    <div class="note">甚至现在还在上课</div>
-    <div class="note">开着梯子进来大概能看到蒙娜丽莎，向日葵和星月夜总是无法显示，我能想起来的话，就改成国内wiki的地址吧：）</div>
-    <div class="note">无论你是从哪来的，请不要举报这个网站：）</div>
-  </div>
+  <script src="./scripts.js"></script>
+
 </body>
+
 </html>
